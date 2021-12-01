@@ -106,11 +106,11 @@ def user_input_burger():
     if selected_burger == 0:     
         name = "Build your own"
         price = 13.00
-        print_buns
+        print_buns()
         bun = input("")
-        print_patty
+        print_patty()
         patty = input("")
-        print_cheese
+        print_cheese()
         cheese = input("")
         b = Burger(name, price, bun, patty, cheese, topp=[], desc="")
         print_toppings()
