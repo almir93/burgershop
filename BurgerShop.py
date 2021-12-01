@@ -101,7 +101,8 @@ def user_input_drink():
     #drink_order = input("Which drink would you like? ")
     #d = Drink(drink_order, drink_dict[drink_order])
 
-    return d
+    #return d
+    pass
 
 
 def user_input_side():
@@ -111,10 +112,17 @@ def user_input_side():
 
 
 def user_input_combo():
-    c = Combo()
+
+    c = Combo() # display combo menu
+    comboPick = input('Please tap 1 for combo #1, 2 for combo #2, 3 for combo #3, ')
+    comboValue = {
+        '1': 12,
+        '2': 13,
+        '3': 14,
+    }
+    return comboValue.get(comboPick)
     # ask user for input and store it in combo object
-    # a combo must include one burger, one side, and one drink
-    return c
+
 
 
 def take_order():
@@ -133,10 +141,10 @@ menu = {
     "Burgers" : {
         "The AJ" : Burger("The AJ", 14.00, "Ciabatta", "Veggie Patty", "Gouda", ["avocado", "onion", "arugula", "mushrooms"], \
             "Beautifully crafted sandwich on a ciabatta roll with a veggie patty, gouda, avocado, onion, arugula, and mushroom"),
-      
+
         "The Big Al" : Burger("The Big Al", 17.00, "plain", "Sirloin", "American Cheese", ["lettuce", "tomato", "mayo", "pickles"], \
             "Our most popular burger option!! Filled with a thick soft juicy patty. Comes with lettuce,tomato,mayo,and pickles"),
-      
+
         "The Triple Bypass" : Burger("The Triple Bypass", 22.00, "Brioche", "Angus Patty", "Cheddar", ["grilled onions", "bacon"], \
             "Six All-American Angus patties topped with cheddar, grilled onions and a mountain of bacon!!! So good that you won't \
                 even regret saying goodbye to your family!"),
@@ -145,13 +153,26 @@ menu = {
     },
 
     "Sides" : {
+        "French Fries": Side("hand cut fries", 4.99, "medium"),
+        "Classic salad" :Side("romane lettuce,olive oil,crushed garlic,Parmesan cheese,croutons",5.99,"medium"),
+        "Onion rings" :Side("onion dipped in bread crumbs and then deep fried",3.99,"medium"),
+        "Coleslaw" :Side("finely shredded raw cabbage with a salad dressing.",2.00,"small")
+
+
 
     },
 
     "Drinks" : {
-
+        "Soft Drink":Drink("medium","Soft Drink", 1.00),
+        "Smoothie": Drink("medium","flavor", 2.00),
+        "Lemonade": Drink("medium","type",2.00),
+        "Beer": Drink("medium","company",6.00)
     }
 }
-
+combo_menu = {
+                "combo1": Combo("combo1", 12, list(menu['Burgers'])[0],list(menu['Sides'])[0],list(menu['Drinks'])[0]),
+                "combo2": Combo("combo2", 12, list(menu['Burgers'])[1],list(menu['Sides'])[0],list(menu['Drinks'])[0]),
+                "combo3": Combo("combo2", 12, list(menu['Burgers'])[2],list(menu['Sides'])[0],list(menu['Drinks'])[0])
+             }
 
 take_order()
