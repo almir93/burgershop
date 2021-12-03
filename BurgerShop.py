@@ -292,7 +292,7 @@ def take_order():
 
     while more != False:
         if count == 0:
-            print(f"\nWhat can I get you started with, {newOrd.guestName}? ")
+            print(f"\nWhat can I get you started with,(Enter x to cancel your order) {newOrd.guestName}? ")
             print("\nOptions:\n")
             print(" 1. Burgers\n 2. Drinks\n 3. Sides\n 4. Combos")
             selected_item = input("\nInput Option Number or Name: ")
