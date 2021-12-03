@@ -29,6 +29,7 @@
 # FoodItem Class
 # Parent Class to all BurgerShop items
 # All FoodItems will have a name and price
+import sys
 class FoodItem:
     name = ''
     price = None
@@ -210,6 +211,9 @@ def user_input_burger(ord):
 
     #  If they select an option other than the build your own
     #  It gets stored as a Burger Object
+    # Press x to exit
+    elif selected_burger == "x":
+                    sys.exit()
     else:
         b = menu["Burgers"][selected_burger]
 
@@ -326,6 +330,9 @@ def check_input(inp, range, list):
     # Checks if the input is in the list without case sensitivity
     if inp.lower() in lowList:
         return True
+    # Allows the user to enter x to exit
+    elif inp == "x":
+        sys.exit()
     # If not, checks if the input is a valid number
     else:
         try:
