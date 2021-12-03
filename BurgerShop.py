@@ -184,7 +184,7 @@ def user_input_burger(ord):
 
     selected_burger = input("What is your choice? ")  
     
-    if (selected_burger == "1") or (selected_burger.lower == "build your own"):  #  If the user wants to build their own Burger, this runs through their options
+    if (selected_burger == "1") or (selected_burger.lower() == "build your own"):  #  If the user wants to build their own Burger, this runs through their options
         
         b = user_create_burger() #  Calls user_create_burger to handle everything but adding toppings
         addTopp = True
@@ -223,7 +223,7 @@ def user_input_burger(ord):
     ord.add_item(b)
 
 #  Function that will create a custom Burger Object with every thing toppings
-def user_create_burger(ord):
+def user_create_burger():
     name = "Build Your Own"
     price = 13
     desc = "Built-to-order burger"
