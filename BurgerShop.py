@@ -295,7 +295,7 @@ def take_order():
             print(f"\nWhat can I get you started with, {newOrd.guestName}? (Enter x to cancel your order)")
             print("\nOptions:\n")
             print(" 1. Burgers\n 2. Drinks\n 3. Sides\n 4. Combos")
-            selected_item = input("\nInput Option Number or Name: ")
+            selected_item = input("\nInput Option Number or Name: (Enter x to cancel order) ")
 
             while check_input(selected_item, 4, ["burgers", "drinks", "sides", "combos"]) == False:
                 selected_item = input("Please input a valid option: ")
